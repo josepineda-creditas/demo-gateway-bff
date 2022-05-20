@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  gateway-bff:
+    build:
+      context: .
+      args:
+        artifactory_user: $ORG_GRADLE_PROJECT_artifactory_user
+        artifactory_password: $ORG_GRADLE_PROJECT_artifactory_password
+        artifactory_contextUrl: $ORG_GRADLE_PROJECT_artifactory_contextUrl
+    image: gateway-bff
+    hostname: gateway-bff
+    ports:
+      - "3000:3000"
+    init: true
+    profiles:
+      - app

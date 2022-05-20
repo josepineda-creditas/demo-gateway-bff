@@ -1,0 +1,21 @@
+management:
+  endpoints:
+    web:
+      base-path: "/"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: false
+server:
+  port: 3000
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+
+platform:
+  url: 'http://localhost:3001'
